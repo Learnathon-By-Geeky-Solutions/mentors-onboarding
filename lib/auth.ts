@@ -20,7 +20,7 @@ export async function decrypt(input: string): Promise<any> {
 }
 
 export async function login(token: string) {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   cookieStore.set('token', token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
@@ -31,6 +31,6 @@ export async function login(token: string) {
 }
 
 export async function logout() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   cookieStore.delete('token');
 }

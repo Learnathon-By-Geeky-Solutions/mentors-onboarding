@@ -3,10 +3,8 @@ import { db } from '@/lib/db';
 import { techStacks } from '@/lib/schema';
 import { eq } from 'drizzle-orm';
 
-export async function PATCH(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+export async function PATCH(request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   try {
     const { discordUrl } = await request.json();
     

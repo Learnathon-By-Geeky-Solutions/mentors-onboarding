@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 198 40% 41%;
+  --primary-dark: 215 57% 25%;
+  --secondary: 0 4% 13%;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 198 40% 41%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 215 57% 25%;
+  --foreground: 0 0% 98%;
+  --card: 215 57% 25%;
+  --card-foreground: 0 0% 98%;
+  --popover: 215 57% 25%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 198 40% 41%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 4% 13%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 215 57% 15%;
+  --muted-foreground: 215 57% 70%;
+  --accent: 215 57% 15%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 215 57% 15%;
+  --input: 215 57% 15%;
+  --ring: 198 40% 41%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Button styles */
+.btn,
+.button,
+button[type="submit"],
+button[type="button"],
+[role="button"] {
+  @apply text-white bg-[#1890BA] hover:bg-[#1890BA]/90;
+}
+
+/* Override shadcn button variants */
+.button-ghost {
+  @apply hover:text-white hover:bg-[#1890BA]/90;
+}
+
+/* Specific button overrides */
+[class*="bg-primary"],
+[class*="bg-destructive"],
+[class*="bg-secondary"] {
+  @apply text-white bg-[#1890BA] hover:bg-[#1890BA]/90;
+}
+
+/* Action buttons in admin panels */
+.add-stack-button,
+.add-license-button,
+.upload-licenses-button {
+  @apply text-white bg-[#1890BA] hover:bg-[#1890BA]/90 !important;
+}

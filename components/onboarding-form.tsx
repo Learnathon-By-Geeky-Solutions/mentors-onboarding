@@ -137,7 +137,6 @@ export default function OnboardingForm({ initialStacks }: { initialStacks: Stack
       if (!res.ok) throw new Error('Failed to get license');
 
       const { licenseKey: key } = await res.json();
-      console.log(licenseKey);
       setLicenseKey(key);
     } catch (error) {
       toast({

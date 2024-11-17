@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import Image from 'next/image';
 import {
@@ -47,17 +47,28 @@ const steps = [
   },
 ];
 
+let intialLoading = true;
+
 export default function OnboardingForm({ initialStacks }: { initialStacks: Stack[] }) {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedStack, setSelectedStack] = useState<Stack | null>(null);
   const [githubUsername, setGithubUsername] = useState('');
-  const [licenseKey, setLicenseKey] = useState('');
+  const [licenseKey, setLicenseKey] = useState('NO License Available');
   const [showConfetti, setShowConfetti] = useState(false);
   const { toast } = useToast();
 
   const handleStackSelect = (stack: Stack) => {
     setSelectedStack(stack);
   };
+
+  useEffect(()=>{
+    if(intialLoading){
+      intialLoading = false;
+      return;
+    }else{
+      handleGetLicense() 
+    }
+  },[githubUsername]);
 
   const handleGithubSubmit = async (username: string) => {
     try {
@@ -126,8 +137,8 @@ export default function OnboardingForm({ initialStacks }: { initialStacks: Stack
       if (!res.ok) throw new Error('Failed to get license');
 
       const { licenseKey: key } = await res.json();
+      console.log(licenseKey);
       setLicenseKey(key);
-      setCurrentStep(6);
     } catch (error) {
       toast({
         title: 'Error',

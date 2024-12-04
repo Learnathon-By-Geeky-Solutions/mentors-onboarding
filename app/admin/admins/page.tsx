@@ -6,7 +6,12 @@ import { AdminList } from './admin-list';
 import { getAdmins } from './actions/admin';
 
 export default function AdminsPage() {
-    const [adminList, setAdminList] = useState([]);
+    const [adminList, setAdminList] = useState<{
+      id: string;
+      email: string;
+      password: string;
+      createdAt: Date | null;
+  }[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

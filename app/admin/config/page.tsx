@@ -7,9 +7,9 @@ export default async function ConfigPage() {
 
 	const sanitizedConfig = {
 		...config,
-		githubToken: config.githubToken ?? undefined,
-		githubOrgName: config.githubOrgName ?? undefined,
-		githubTeamSlug: config.githubTeamSlug ?? undefined,
+		githubToken: config?.githubToken ?? '',
+		githubOrgName: config?.githubOrgName ?? '',
+		githubTeamSlug: config?.githubTeamSlug ?? '',
 	};
 
 	return (

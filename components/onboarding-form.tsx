@@ -6,9 +6,6 @@ import Image from 'next/image';
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
 } from '@/components/ui/card';
 import { StepContent } from './onboarding/step-content';
 import { Confetti } from './onboarding/confetti';
@@ -41,10 +38,11 @@ const steps = [
     title: 'JetBrains License',
     description: 'Get your JetBrains IDE license',
   },
-  {
+  // Commented out for future use
+  /*{
     title: 'Documentation',
     description: 'Read the important documentation',
-  },
+  },*/
 ];
 
 let intialLoading = true;

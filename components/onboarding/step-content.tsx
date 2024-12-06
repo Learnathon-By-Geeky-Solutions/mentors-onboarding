@@ -151,13 +151,13 @@ export function StepContent({
                 <Button
                   onClick={() =>
                     window.open(
-                      "https://resources.jetbrains.com/storage/products/jetbrains/docs/jetbrains_coupon_guide.pdf",
+                      "https://www.jetbrains.com/store/redeem/",
                       "_blank"
                     )
                   }
                   className="flex items-center gap-2"
                 >
-                  View Redemption Guide
+                  Redemption Link
                   <ExternalLink className="h-4 w-4" />
                 </Button>
               </div>

@@ -26,7 +26,7 @@ export default function DashboardPage() {
 
   const statsConfig = [
     {
-      name: 'Total Participants',
+      name: 'Total Mentors',
       value: stats?.participantsCount ?? 0,
       icon: Users,
       color: 'text-blue-600',
@@ -38,7 +38,7 @@ export default function DashboardPage() {
       color: 'text-green-600',
     },
     {
-      name: 'Available Licenses',
+      name: 'Available Coupons',
       value: stats?.availableLicensesCount ?? 0,
       icon: Key,
       color: 'text-purple-600',

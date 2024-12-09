@@ -141,6 +141,11 @@ export default function OnboardingForm({ initialStacks }: { initialStacks: Stack
   };
 
   const handleComplete = () => {
+    if (currentStep === 3) {
+      handleTeamAccess();
+      return;
+    }
+    
     if (currentStep === steps.length) {
       setShowConfetti(true);
     } else {

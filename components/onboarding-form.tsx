@@ -35,8 +35,8 @@ const steps = [
     description: 'Join your tech stack\'s Discord server',
   },
   {
-    title: 'JetBrains License',
-    description: 'Get your JetBrains IDE license',
+    title: 'JetBrains Coupon',
+    description: 'Get your JetBrains 6 months all products pack',
   },
   // Commented out for future use
   /*{
